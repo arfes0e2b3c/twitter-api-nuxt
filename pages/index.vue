@@ -15,10 +15,10 @@ export default {
     //fetchがcorsで弾かれるから使えない。
     // const {TwitterApi} = require('twitter-api-v2');
     // const client = new TwitterApi({
-    //   appKey: '3VSihSK08fjwlsLIodkGnGSN1',
-    //   appSecret: 'WyBxs6soFfjVDXInUemB9aqU5TSPb4agP8m4Km5lgkfQ4uesPy',
-    //   accessToken: '1494570525166690304-bBOeJQBl5nq6XLMaaKAOxLf0W2S7bi',
-    //   accessSecret: 'EcsKuV4GPoh7rTg4T1XaCLiRKUQjGyck66MZpBjPWhcwN'
+    //   appKey: consumer_key,
+    //   appSecret: consumer_key_secret,
+    //   accessToken: access_token_key,
+    //   accessSecret: access_token_key_secret
     // });
     // client.v1.tweet('This tweet was written by a bot').then((val) => {
     //     console.log(val)
@@ -50,8 +50,8 @@ export default {
     const crypto = require('crypto')
     const oauth = OAuth({
       consumer: {
-        key: '3VSihSK08fjwlsLIodkGnGSN1',
-        secret: 'WyBxs6soFfjVDXInUemB9aqU5TSPb4agP8m4Km5lgkfQ4uesPy'
+        key: consumer_key,
+        secret: consumer_key_secret
       },
       signature_method: 'HMAC-SHA1',
       hash_function(base_string, key) {
@@ -62,8 +62,8 @@ export default {
       },
     })
     const token = {
-      key: '1494570525166690304-bBOeJQBl5nq6XLMaaKAOxLf0W2S7bi',
-      secret: 'EcsKuV4GPoh7rTg4T1XaCLiRKUQjGyck66MZpBjPWhcwN',
+      key: access_token_key,
+      secret: access_token_key_secret,
     }
     const request = {
       url: "https://api.twitter.com/2/users/1494570525166690304/tweets",
@@ -89,8 +89,8 @@ export default {
     //postは無理
     // const oauth = OAuth({
     //   consumer: {
-    //     key: '3VSihSK08fjwlsLIodkGnGSN1',
-    //     secret: 'WyBxs6soFfjVDXInUemB9aqU5TSPb4agP8m4Km5lgkfQ4uesPy'
+    //     key: consumer_key,
+    //     secret: consumer_key_secret
     //   },
     //   signature_method: 'HMAC-SHA1',
     //   hash_function(base_string, key) {
@@ -101,8 +101,8 @@ export default {
     //   },
     // })
     // const token = {
-    //   key: '1494570525166690304-bBOeJQBl5nq6XLMaaKAOxLf0W2S7bi',
-    //   secret: 'EcsKuV4GPoh7rTg4T1XaCLiRKUQjGyck66MZpBjPWhcwN',
+    //   key: access_token_key,
+    //   secret: access_token_key_secret,
     // }
     // const request = {
     //   url: "https://api.twitter.com/2/tweets?status=Hello%20world",
